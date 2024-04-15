@@ -11,7 +11,7 @@ function sortArray(arr: number[]): number[] {
   return newArray;
 }
 
-let numbers = [4, 2, 7, 1, 9, -3];
+let numbers = [4, 2, 7, 1, 9, -3]; // Testvektor
 let sortedArray = sortArray(numbers);
 console.log(sortedArray);
 
@@ -31,13 +31,13 @@ function sortArrByInsert (arr: number[]): number[]  {
   }
 return arr;
 }
-console.log(sortArrByInsert([2, 1, 5, 4]));
+console.log(sortArrByInsert([2, 1, 5, 4])); // Testvektor
 
 // selectionSort
 // Se första - typ
 
 function sortArrBySelection (arr: number[]): number[]  {
-  for ( let i = 1  ; i < arr.length ; i++) {
+  for ( let i = 0  ; i < arr.length ; i++) {
     let minKey = i;
 
     for (let ii = i + 1; ii < arr.length; ii++) {
@@ -47,15 +47,19 @@ function sortArrBySelection (arr: number[]): number[]  {
     }
 
     if (minKey !== i) {
-      const temp = arr[i];
-      arr[i] = arr[minKey];
-      arr[minKey] = temp; 
+      [arr[i], arr[minKey]] = [arr[minKey], arr[i]];
     }
 
   }
   return arr
 }
-console.log(sortArrBySelection([2, 1, 3, 5, 1]));
+console.log(sortArrBySelection([2, 1, 3, 5, 1])); // Testvektor
+
+// Uppgift 3
+// linearSearch
+
+
+// binarySearch
 
 
 @Component({

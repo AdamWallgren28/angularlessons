@@ -42,7 +42,9 @@ interface Produkt {
   category: string;
 }
 
-
+//...
+//...
+//...
 
 
 @Component({
