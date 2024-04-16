@@ -58,7 +58,7 @@ interface Produkt {
 
 export class Lektion3Component {
 
-  public gurka : string = 'Jag är en gurka';
+  public svarTre : string = 'Se console för svar.';
 
 
 }

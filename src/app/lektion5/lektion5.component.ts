@@ -1,23 +1,55 @@
 import { Component } from '@angular/core';
 
-function countChar(str: string, char: string): number {
+// Uppgift 1
+function charCount(str: string, char: string): number {
 
   if (str.length === 0) {
       return 0;
   }
   
-  if (str.charAt(0) === char) {
-      return 1 + countChar(str.slice(1), char);
+  if (str[0] === char) {
+      return 1 + charCount(str.slice(1), char);
   } else {
-      return countChar(str.slice(1), char);
+      return charCount(str.slice(1), char);
   }
 }
-
-// Exempelanvändning
-const str: string = "adam wallgren";
-const char: string = "a";
+let str: string = "adam wallgren";
+let char: string = "a";
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Uppgift 2
+function reverseListRecursive(list: any[]): any[] {
+  if (list.length <= 1) {
+      return list;
+  }
+  return [...reverseListRecursive(list.slice(1)), list[0]] //lägger första sist
+
+  // eller sista först (concat funkar ej med T[] ???)
+  //return [list[list.length - 1]].concat(reverseListRecursive(list.slice(0, list.length - 1)));
+}
+let originalList: any[] = [1, 2, 3, 4, 5];
+let reversedList: any[] = reverseListRecursive(originalList);
+
+// Uppgift 3
+
+
+// ERXPORTERING
 @Component({
   selector: 'app-lektion5',
   standalone: true,
@@ -26,6 +58,8 @@ const char: string = "a";
   styleUrl: './lektion5.component.css'
 })
 export class Lektion5Component {
-  public svar : string =`Antal förekomster av "${char}" i "${str}" är: ${countChar(str, char)}`;
+  public svarFiveOne : string =`Svar 1: Antal förekomster av "${char}" i "${str}" är: ${charCount(str, char)}.`;
+  public svarFiveTwo : string = `Svar 2: [${originalList}] bakofram, blir:  [${reversedList}].`;
+  public svarFiveThree : string = `Svar 3: `;
 
 }
