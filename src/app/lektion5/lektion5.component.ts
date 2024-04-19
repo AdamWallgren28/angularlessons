@@ -45,7 +45,7 @@ let reversedList: any[] = reverseListRecursive(originalList);
 export class Lektion5Component implements OnInit {
   public svarFiveOne : string =`Svar 1: Antal förekomster av "${char}" i "${str}" är: ${charCount(str, char)}.`;
   public svarFiveTwo : string = `Svar 2: [${originalList}] bakofram, blir:  [${reversedList}].`;
-  public svarFiveThree : string = `Svar 3: `;
+  public svarFiveThree : string = `Svar 3: Se console (F12).`;
 
 
 
