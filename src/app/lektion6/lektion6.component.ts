@@ -1,16 +1,26 @@
 import { Component } from '@angular/core';
 
 // Uppgift 6.1
-function addNumbers(a: number, b: number): number {
+export function addNumbers(a: number, b: number): number {
   let sum = a+b;
   return sum;
 }
-console.log(addNumbers(1, 2))
+
+// Uppgift 6.2
+export function greetName(nameStr: string): string {
+  return `Hello ${nameStr}`;
+}
+
+// Uppgift 6.3
+export async function delayedMessage(): Promise<string> {
+  return new Promise(resolve => {
+      setTimeout(() => {
+          resolve("Hello after delay");
+      }, 500);
+  });
+}
 
 
-test('adds 1 + 2 to equal 3', () => {
-  expect(addNumbers(1, 2)).toBe(3);
-});
 
 @Component({
   selector: 'app-lektion6',
@@ -23,5 +33,5 @@ test('adds 1 + 2 to equal 3', () => {
 
 export class Lektion6Component {
   public svarSixOne : string = `Svar 6.1:  Funktion att testa: 1 + 2 = ${addNumbers(1, 2)}`;
-  public testSixOne : string = ``;
+  public testSixOne : string = `För teste, kör ng test i terminalen (xcfe4).`;
 }
